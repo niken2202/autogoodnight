@@ -2,7 +2,7 @@
 var querystring = require('querystring');
 var request = require('request');
 
-const cookies = "sb=HaUyXQ0lPZtZmxADkydoTHhH; datr=HaUyXYVsxKsVSJn90X4kS6yn; locale=vi_VN; c_user=100030379368683; xs=41%3A43JfAyzvwPEjBg%3A2%3A1564838649%3A2847%3A6307; fr=1lIuqY0XvdTB2RzYt.AWWAv6Dj7ZoRf0D8xGkpFKX94eE.BdMqUd.vN.AAA.0.0.BdRYr5.AWUaFmBv; spin=r.1001017756_b.trunk_t.1564838650_s.1_v.2_;";
+const cookies = "sb=HaUyXQ0lPZtZmxADkydoTHhH; datr=HaUyXYVsxKsVSJn90X4kS6yn; locale=vi_VN; wd=1019x1329; c_user=100030379368683; xs=41%3ARpdXWqugIu3UBQ%3A2%3A1564841116%3A2847%3A6307; fr=1lIuqY0XvdTB2RzYt.AWUQje53Vlh9J74W2jseoXWX2c8.BdMqUd.vN.AAA.0.0.BdRZSc.AWVM1EIU; spin=r.1001017756_b.trunk_t.1564841117_s.1_v.2_;";
 
 var header = {
     'Cookie': cookies,
