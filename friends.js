@@ -1,3 +1,4 @@
+var moment = require('moment');
 var message= [
 "Hmmm... {time} rồi, đi ngủ thôi. Ngủ ngon nhé ! ;) ",
 "Bây giờ là {time}, đến giờ đi ngủ rồi cậu ơi, ngủ ngon nhé ;)",
@@ -19,7 +20,7 @@ module.exports ={
         100030379368683
     ],
     getMessage: function(){
-        var time = new Date().toLocaleTimeString();
+        var time = moment().utcOffset('+07:00').format('HH:mm:ss');
         return message[Math.floor(Math.random() * message.length)].replace('{time}',time);
     }
 }
