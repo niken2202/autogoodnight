@@ -1,4 +1,4 @@
-var moment = require('moment');
+var moment = require('moment-timezone');
 var message= [
 "Hmmm... {time} rồi, đi ngủ thôi. Ngủ ngon nhé ! ;) ",
 "Bây giờ là {time}, đến giờ đi ngủ rồi cậu ơi, ngủ ngon nhé ;)",
@@ -12,7 +12,7 @@ var message= [
 'Ngủ ngon nhé ;), hẹn gặp vào ngày mai <3',
 'Cậu có thấy {time} là muộn rồi ko ? nếu có thì đi ngủ thôi nhỉ ...',
 'E hèm, Thắng đây, đi ngủ thôi,{time} rồi! <3',
-'Hmmm... Ngủ ngon.. tớ sẽ chúc lại sẽ chúc ngủ ngon vào giờ này {time} ngày mai :D'
+'Hmmm... Ngủ ngon.. tớ lại sẽ chúc ngủ ngon vào giờ này {time} ngày mai :D'
 ];
 
 module.exports ={
@@ -20,7 +20,7 @@ module.exports ={
         100030379368683
     ],
     getMessage: function(){
-        var time = moment().utcOffset('+07:00').format('HH:mm:ss');
+        var time =moment().utcOffset('+7').format('HH:mm:ss');
         return message[Math.floor(Math.random() * message.length)].replace('{time}',time);
     }
 }

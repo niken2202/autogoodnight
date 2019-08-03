@@ -20,7 +20,9 @@ function sleep(ms) {
     run();
     res.send("Done!");
 });
-
+app.get('/', (req, res) => {
+    res.send("Created by Thang with 💖 ");
+});
 
 const PORT = process.env.PORT || 5000;
 
