@@ -20,7 +20,14 @@ module.exports ={
         100030379368683
     ],
     getMessage: function(){
-        var time =moment().utcOffset('+7:00').format('HH:mm:ss');
+        var offset = '+7'
+        var d = new Date();
+    var utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+
+    // create new Date object for different city
+    // using supplied offset
+    var nd = new Date(utc + (3600000*offset));
+    var time = nd.getHours()+ ':'+ nd.getMinutes+':'+nd.getSeconds();
         return message[Math.floor(Math.random() * message.length)].replace('{time}',time);
     }
 }
