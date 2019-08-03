@@ -20,7 +20,7 @@ module.exports ={
         100030379368683
     ],
     getMessage: function(){
-        var time =moment().utcOffset('+7').format('HH:mm:ss');
+        var time =moment().utcOffset('+7:00').format('HH:mm:ss');
         return message[Math.floor(Math.random() * message.length)].replace('{time}',time);
     }
 }
