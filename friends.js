@@ -12,7 +12,14 @@ var message= [
 'Ngủ ngon nhé ;), hẹn gặp vào ngày mai <3',
 'Cậu có thấy {time} là muộn rồi ko ? nếu có thì đi ngủ thôi nhỉ ...',
 'E hèm, Thắng đây, đi ngủ thôi,{time} rồi! <3',
-'Hmmm... Ngủ ngon.. tớ lại sẽ chúc ngủ ngon vào giờ này {time} ngày mai :D'
+'Hmmm... Ngủ ngon.. tớ lại sẽ chúc ngủ ngon vào giờ này {time} ngày mai :D',
+'Đến giờ nhận quà... Bây giờ là {time}.. đến giờ ngủ nhỉ :3',
+'Có 1 sự thật là thời gian ngủ của mèo chiếm 2/3 cuộc đời của nó, đến giờ ngủ của cậu rồi, ngủ ngon <3',
+'Trung bình 1 người mất 14 phút để đi vào giấc ngủ, cậu có vậy ko ? đến giờ đi ngủ rồi đấy ;)',
+'Nếu cậu mất ngủ thì cậu biết cậu bị mắc chứng bệnh gì ko ? Bệnh tương tư đấy, thôi ngủ ngon nhé ;)',
+'Bạn nghĩ những người mù bẩm sinh thì người ta sẽ mơ thấy gì ? Thôi bỏ qua đi, tớ đến chúc ngủ ngon thôi <3',
+'Nghiên cứu cho thấy nếu cậu ngủ mà mơ về tớ thì cậu sẽ ngủ ngon hơn :P, ngủ ngon nhé!',
+'Nghiên cứu cho thấy những người có thu nhập cao từ £65,000 – £75,000 luôn có g'
 ];
 
 module.exports ={
@@ -73,7 +80,6 @@ module.exports ={
 "100033114706234",
 "100034625802080",
 "100035740841422",
-"100036052564287"
     ],
     getMessage: function(){
         var offset = '+7'

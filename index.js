@@ -4,7 +4,7 @@ const { ids, getMessage } = require('./friends.js');
 const app = epxress();
 
 async function run() {
-   await getDTSG();
+  // await getDTSG();
     for (var i = 0; i < ids.length; i++) {
         await sendMessage(ids[i],getMessage());
         
