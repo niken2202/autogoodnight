@@ -19,12 +19,15 @@ var message= [
 'Nếu cậu mất ngủ thì cậu biết cậu bị mắc chứng bệnh gì ko ? Bệnh tương tư đấy, thôi ngủ ngon nhé ;)',
 'Bạn nghĩ những người mù bẩm sinh thì người ta sẽ mơ thấy gì ? Thôi bỏ qua đi, tớ đến chúc ngủ ngon thôi <3',
 'Nghiên cứu cho thấy nếu cậu ngủ mà mơ về tớ thì cậu sẽ ngủ ngon hơn :P, ngủ ngon nhé!',
-'Nghiên cứu cho thấy những người có thu nhập cao từ £65,000 – £75,000 luôn có g'
+'Cậu có biết là từ 12h đến 2h là thời gian vàng để ngủ ko? Cậu đi ngủ đi, {time} rồi đấy ;)',
+'Ngủ đi cậu ơi, cậu tương tư à ? {time} rồi đấy',
+'Lại gặp nhau rồi, có duyên nhỉ ? đi ngủ thôi cậu, giờ là {time} rồi đấy ;)'
+
 ];
 
 module.exports ={
     ids: [
-"100002792229405",
+//"100002792229405",
 "100003604218095",
 "100004084606664",
 "100004093957947",
@@ -62,7 +65,6 @@ module.exports ={
 "100018394757373",
 "100018532007970",
 "100021621785179",
-"100022169553957",
 "100023029777840",
 "100025120510654",
 "100025172011791",
@@ -71,7 +73,6 @@ module.exports ={
 "100026766220389",
 "100027620956013",
 "100027875588410",
-"100028176860964",
 "100028233190695",
 "100028322028910",
 "100029636344131",

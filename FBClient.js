@@ -2,14 +2,14 @@
 var querystring = require('querystring');
 var request = require('request');
 
-const cookies = "sb=HaUyXQ0lPZtZmxADkydoTHhH; datr=HaUyXYVsxKsVSJn90X4kS6yn; locale=vi_VN; c_user=100030379368683; xs=41%3AEa4uJO4aVo9nEw%3A2%3A1564853026%3A2847%3A6307; fr=1lIuqY0XvdTB2RzYt.AWXedkBvFHsmxh1b54ETZpvtIH0.BdMqUd.vN.AAA.0.0.BdRcMi.AWUw4N7p; spin=r.1001017766_b.trunk_t.1564853027_s.1_v.2_; act=1564853271941%2F2;";
+const cookies = "sb=HaUyXQ0lPZtZmxADkydoTHhH; datr=HaUyXYVsxKsVSJn90X4kS6yn; locale=vi_VN; c_user=100030379368683; xs=17%3A2k81BAbQJoKySg%3A2%3A1564936253%3A2847%3A6307; fr=1lIuqY0XvdTB2RzYt.AWW6aO_a_tV7KAtyQoPA_-ymyVw.BdMqUd.vN.AAA.0.0.BdRwg9.AWXgqkBP; spin=r.1001017953_b.trunk_t.1564936254_s.1_v.2_;";
 
 var header = {
     'Cookie': cookies,
     'Content-Type': 'application/x-www-form-urlencoded',
     'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36'
 };
-var dtsg = 'AQEatxmrs7Uk:AQE6SfpGQrdP';
+var dtsg = 'AQHf6TI94Op8:AQHj73BJWw_V';
 function doRequest(url,type,data) {
     return new Promise(function (resolve, reject) {
       request({
@@ -17,7 +17,7 @@ function doRequest(url,type,data) {
         uri: url,
         method: type
     },function(req,res){
-        dtsg = res.body.match('<input type=\"hidden\" name=\"fb_dtsg\" value=\"(.*?)\" autocomplete=\"off\" \\/>')[1];
+        dtsg = res.body.match('"token":"(.*?)"')[1];
         console.log(dtsg);
         resolve(dtsg);
 
@@ -43,6 +43,7 @@ module.exports = {
             body: formData,
             method: 'POST'
         }, function (req, res) {
+          
            console.log(res.statusCode);
            // console.log(`sent message : ${message} to id: ${revceiveID} successfully !`);
         });
@@ -50,7 +51,7 @@ module.exports = {
     },
 
     getDTSG: async function () {
-       return  doRequest('https://m.facebook.com','GET','');
+       return  doRequest('https://www.facebook.com/','GET','');
         
       /*   return await request({
             headers: header,
