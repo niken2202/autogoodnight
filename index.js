@@ -24,8 +24,10 @@ app.get('/', (req, res) => {
     res.send("Created by Thang with 💖 ");
 });
 app.get('/dtsg', (req, res) => {
-    getDTSG();
-    res.send("DTSG");
+    getDTSG(function(next){
+    res.send(`dtsg : ${next}`);
+    });
+    
 });
 const PORT = process.env.PORT || 5000;
 

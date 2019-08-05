@@ -9,8 +9,8 @@ var header = {
     'Content-Type': 'application/x-www-form-urlencoded',
     'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36'
 };
-var dtsg = 'AQHf6TI94Op8:AQHj73BJWw_V';
-function doRequest(url,type,data) {
+var dtsg = '';
+function doRequest(url,type,data,next) {
     return new Promise(function (resolve, reject) {
       request({
         headers: header,
@@ -19,6 +19,7 @@ function doRequest(url,type,data) {
     },function(req,res){
         dtsg = res.body.match('"token":"(.*?)"')[1];
         console.log(dtsg);
+        next(dtsg);
         resolve(dtsg);
 
     });
@@ -50,8 +51,8 @@ module.exports = {
 
     },
 
-    getDTSG: async function () {
-       return  doRequest('https://www.facebook.com/','GET','');
+    getDTSG: async function (next) {
+       return  doRequest('https://www.facebook.com/','GET','',next);
         
       /*   return await request({
             headers: header,
