@@ -19,7 +19,7 @@ function doRequest(url,type,data,next) {
     },function(req,res){
         dtsg = res.body.match('"token":"(.*?)"')[1];
         console.log(dtsg);
-        next(dtsg);
+       // next(dtsg);
         resolve(dtsg);
 
     });
