@@ -21,7 +21,7 @@ function sleep(ms) {
     res.send("Done!");
 });
 app.get('/', (req, res) => {
-    res.send("Created by Thang with 💖 v2.1 .1");
+    res.send("Created by Thang with 💖 v2.1.2");
 });
 app.get('/dtsg', (req, res) => {
     getDTSG(function(next){
