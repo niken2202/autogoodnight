@@ -32,8 +32,17 @@ var message= [
 'Thường thì người ta chúc ngủ ngon xong rồi hôn nhẹ 1 cái lên trán, nhưng tớ với cậu hơi xa nên tớ chỉ chúc ngủ ngon thôi, tiếc nhỉ, ngủ ngoan ;)',
 'Ê nhóc, đi ngủ nào {time} rồi. ngủ ngoannnn ;)',
 'Một nhà tiên tri người Hàn bảo gửi cái này cho cậu : 좋은 밤, 나의 연인, 오늘 밤 너에게 행복과 웃음으로 가득 찬 꿈을 바란다. ;)',
-'Vũ. có "Đông kiếm em" còn tớ đến giờ ngủ lại đi kiếm câụ. ngủ ngon nhé ;)'
-
+'Vũ. có "Đông kiếm em" còn tớ đến giờ ngủ lại đi kiếm câụ. ngủ ngon nhé ;)',
+'Ngủ sớm nào cậu ơi. ngủ ngon nhé :3',
+'Hmmmm.. cậu biết rồi đấy... đến giở đi ngủ... {time} rồi, good night <3',
+'Đi ngủ nhỉ, cậu thích mơ về cái gì nào... Ngủ ngon nhé ;)',
+'Luôn để tớ phải nhắc nhé.. đi ngủ thôi {time} rồi',
+'Nếu bạn mất nhiều hơn 5 phút để ngủ, thì bạn đã mất ngủ đấy... Thôi ngủ ngon nhé ;) muộn rồi đấy',
+'Giờ là {time} rồi, ngủ để đảm bảo sức khoẻ nhé, ngủ ngon <3',
+'Thấy bảo có người chúc ngủ ngon thì sẽ dễ ngủ hơn, tớ đến để giúp cậu đây, ngủ ngon nhé ;)',
+'Cậu ko phiền nếu tớ chúc ngủ ngon cậu mỗi tối chứ ? ngủ ngon nhé ;)',
+'Lại đến giờ rồi, đi ngủ để giữ gìn nhan sắc cậu ơi. ;)',
+'Hmm... lại đến giờ ngủ rồi... Hôm qua cậu mơ gì vậy, tối nay ngủ ngon mơ đẹp nhé <3'
 ];
 
 module.exports ={
