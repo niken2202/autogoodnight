@@ -42,7 +42,15 @@ var message= [
 'Thấy bảo có người chúc ngủ ngon thì sẽ dễ ngủ hơn, tớ đến để giúp cậu đây, ngủ ngon nhé ;)',
 'Cậu ko phiền nếu tớ chúc ngủ ngon cậu mỗi tối chứ ? ngủ ngon nhé ;)',
 'Lại đến giờ rồi, đi ngủ để giữ gìn nhan sắc cậu ơi. ;)',
-'Hmm... lại đến giờ ngủ rồi... Hôm qua cậu mơ gì vậy, tối nay ngủ ngon mơ đẹp nhé <3'
+'Hmm... lại đến giờ ngủ rồi... Hôm qua cậu mơ gì vậy, tối nay ngủ ngon mơ đẹp nhé <3',
+'ngủ ngon mơ đẹp nhé',
+'Chào cậu, đến giờ đi ngủ rồi đấy, good night',
+'Cậu tối qua mơ gì, giờ đi ngủ để mơ tiếp nào :3',
+'Cậu có phiền nếu tớ tiếp tục chúc cậu ngủ ngon ;), ngủ thôi nào',
+'Đến cuối ngày chúng ta lại gặp nhau, đi ngủ cậu ơi <3',
+'Tí nữa thì quên chúc ngủ ngon, cậu ngủ ngon nhé',
+'Lại suýt quên chúc ngủ ngon, おやすみなさい <3',
+'Thôi nghỉ đi nào, đi ngủ đảm bảo sức khởe, cậu ngủ ngon nhé ;)'
 ];
 
 module.exports ={
@@ -102,7 +110,7 @@ module.exports ={
 "100030649745108",
 "100033114706234",
 "100034625802080",
-"100035740841422",
+
     ],
     getMessage: function(){
         var offset = '+7'
