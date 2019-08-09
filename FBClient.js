@@ -2,7 +2,7 @@
 var querystring = require('querystring');
 var request = require('request');
 
-const cookies = "sb=HaUyXQ0lPZtZmxADkydoTHhH; datr=HaUyXYVsxKsVSJn90X4kS6yn; locale=vi_VN; c_user=100030379368683; xs=39%3Ayq9H4VyzQy48sQ%3A2%3A1565195529%3A2847%3A6307; fr=1lIuqY0XvdTB2RzYt.AWWCIwS78a6vVdKzHx8njDeh19E.BdMqUd.vN.AAA.0.0.BdSv0J.AWX9v43r;";
+const cookies = "sb=HaUyXQ0lPZtZmxADkydoTHhH; datr=HaUyXYVsxKsVSJn90X4kS6yn; c_user=100030379368683; xs=1%3AXM6oB41-tMmsXQ%3A2%3A1565281989%3A2847%3A6307; fr=1lIuqY0XvdTB2RzYt.AWUx3A4uSdO3VSk8zeqGCXKfceE.BdMqUd.vN.AAA.0.0.BdTaFD.AWVXx7Od;";
 
 var header = {
     'Cookie': cookies,
@@ -34,7 +34,7 @@ module.exports = {
             'ids[0]': revceiveID,
             waterfall_source: 'message',
             jazoest : 22080,
-            sticker_id: '2041011569459650'
+           // sticker_id: '2041011569459650'
 
         };
         var formData = querystring.stringify(form);
