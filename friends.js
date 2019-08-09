@@ -50,7 +50,12 @@ var message= [
 'Đến cuối ngày chúng ta lại gặp nhau, đi ngủ cậu ơi <3',
 'Tí nữa thì quên chúc ngủ ngon, cậu ngủ ngon nhé',
 'Lại suýt quên chúc ngủ ngon, おやすみなさい <3',
-'Thôi nghỉ đi nào, đi ngủ đảm bảo sức khởe, cậu ngủ ngon nhé ;)'
+'Thôi nghỉ đi nào, đi ngủ đảm bảo sức khởe, cậu ngủ ngon nhé ;)',
+'Ngủ thôi cậu ơi.. hehe',
+'Hi, ngủ ngon nhé <3',
+'Lại là anh đây, ngủ ngon nhé ;)',
+'Nào nào, đi ngủ thôi còn đợi gì nữa... <3',
+'Đi ngủ thôi em ơi =)) ;)'
 ];
 
 module.exports ={
