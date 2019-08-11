@@ -65,7 +65,12 @@ var message= [
 'Thả lỏng cơ thể sẽ giúp cậu ngủ tốt hơn, ngủ ngon nhé :D',
 'Ngủ ngon cậu ơi :D'
 ];
-
+var weather ='';
+   
+ getWeather(function(content){
+    weather=content;
+    
+        });
 module.exports ={
     ids: [
 "100002792229405",
@@ -126,11 +131,7 @@ module.exports ={
 
     // create new Date object for different city
     // using supplied offset
-    var weather ;
-    await getWeather(function(content){
-weather=content;
 
-    });
     var nd = new Date(utc + (3600000*offset));
     var time = nd.getHours()+ ':'+ nd.getMinutes()+':'+nd.getSeconds();
     var mess = message[Math.floor(Math.random() * message.length)].replace('{time}',time)+'\r\n'+weather;
