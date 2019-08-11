@@ -27,7 +27,7 @@ async function weather(location,next){
                 json = JSON.parse(data);
              
                 var temp = Math.round((((json.forecasts[1].high + json.forecasts[1].low))/2)*10)/10;
-               var str = `${json.location.city} có ${json.forecasts[1].text}, nhiệt độ TB:${temp} ºC`;
+               var str = `${json.location.city} có ${json.forecasts[1].text}, nhiệt độ TB: ${temp} ºC`;
                next(str);
                resolve(str);
             }

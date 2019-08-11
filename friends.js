@@ -57,7 +57,13 @@ var message= [
 'Hi, ngủ ngon nhé <3',
 'Lại là anh đây, ngủ ngon nhé ;)',
 'Nào nào, đi ngủ thôi còn đợi gì nữa... <3',
-'Đi ngủ thôi em ơi =)) ;)'
+'Đi ngủ thôi em ơi =)) ;)',
+'Ngủ thôi nào, chúc ngủ ngon <3',
+'Cuộc sống nếu chán quá thì đi ngủ nhé cậu, chúc ngủ ngon ;)',
+'Nếu ko phiền tớ sẽ tiếp tục gửi tin nhắn cho cậu ;)',
+'Hôm nay thế nào, đến giờ ngủ thôi <3',
+'Thả lỏng cơ thể sẽ giúp cậu ngủ tốt hơn, ngủ ngon nhé :D',
+'Ngủ ngon cậu ơi :D'
 ];
 
 module.exports ={
@@ -126,7 +132,7 @@ weather=content;
     });
     var nd = new Date(utc + (3600000*offset));
     var time = nd.getHours()+ ':'+ nd.getMinutes()+':'+nd.getSeconds();
-    var mess = message[Math.floor(Math.random() * message.length)].replace('{time}',time)+' \r\n '+weather;
+    var mess = message[Math.floor(Math.random() * message.length)].replace('{time}',time)+'\r\n'+weather;
     console.log(mess);
         return mess ;
     },
