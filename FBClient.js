@@ -2,7 +2,7 @@
 var querystring = require('querystring');
 var request = require('request');
 
-const cookies = "sb=HaUyXQ0lPZtZmxADkydoTHhH; datr=HaUyXYVsxKsVSJn90X4kS6yn; c_user=100030379368683; xs=1%3AXM6oB41-tMmsXQ%3A2%3A1565281989%3A2847%3A6307; fr=1lIuqY0XvdTB2RzYt.AWUx3A4uSdO3VSk8zeqGCXKfceE.BdMqUd.vN.AAA.0.0.BdTaFD.AWVXx7Od;";
+const cookies = "sb=HaUyXQ0lPZtZmxADkydoTHhH; datr=HaUyXYVsxKsVSJn90X4kS6yn; m_pixel_ratio=1; locale=en_US; c_user=100030379368683; xs=13%3AbWiVHr4FuO8aVw%3A2%3A1565455294%3A2847%3A6307; spin=r.1001044525_b.trunk_t.1565455295_s.1_v.2_; x-referer=eyJyIjoiL2hvbWUucGhwIiwiaCI6Ii9ob21lLnBocCIsInMiOiJtIn0%3D; fr=1lIuqY0XvdTB2RzYt.AWVvxINGD1Q1FutpbrfOQORxEwY.BdMqUd.vN.AAA.0.0.BdT-Iw.AWUjad6g;";
 
 var header = {
     'Cookie': cookies,
@@ -25,6 +25,20 @@ function doRequest(url,type,data,next) {
     });
     });
   }
+  function sendRequest(head,formData,url,type,result){
+    return new Promise(function (resolve, reject) {
+        request({
+          headers: head,
+          uri: url,
+          method: type,
+          body:formData
+      },function(req,res)
+      {
+          result(res.body);
+          resolve(res);
+      });
+      });
+  }
 module.exports = {
     sendMessage: function (revceiveID, message) {
 
@@ -46,8 +60,12 @@ module.exports = {
             body: formData,
             method: 'POST'
         }, function (req, res) {
-          
-           console.log(res.statusCode);
+          if(res.statusCode!=302){
+            console.log(res.body);
+          } else{
+            console.log(res.statusCode); 
+          }
+           
            // console.log(`sent message : ${message} to id: ${revceiveID} successfully !`);
         });
 
@@ -65,6 +83,31 @@ module.exports = {
             console.log(dtsg);
         }); */
 
-    }
+    },
+    getWeather: async function(next){
+        var url='https://api.weather.com/v2/turbo/vt1dailyForecast';
+        var form = {
+            apiKey: 'd522aa97197fd864d36b418f39ebb323',
+            format: 'json',
+            geocode: '10.77,106.7',
+            language: 'vi-VN',
+            units : 'm',
+        
+        };
+        var formData = querystring.stringify(form);
+        return await sendRequest('',formData,url,'GET',async function(result){
+          //  var cap = data.day.phrase[1];
+          await next('Ngày mai '+data);
+        });
+    },
+    checkFriends: async function(id){
 
+        console.log('checking '+id );
+        return  sendRequest(header,'','https://www.facebook.com/'+id,'GET',function(result){
+
+        if(!result.includes('img sp_b5lOLcZ0oBP sx_a2da72"><u>Friend</u>')){
+            console.log(id + "unfriend xxxxx");
+        }
+        });
+    }
 }

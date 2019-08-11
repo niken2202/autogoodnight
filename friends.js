@@ -1,4 +1,6 @@
 var moment = require('moment-timezone');
+const { getWeather} = require('./yahooweather.js');
+
 var message= [
 "Hmmm... {time} rồi, đi ngủ thôi. Ngủ ngon nhé ! ;) ",
 "Bây giờ là {time}, đến giờ đi ngủ rồi cậu ơi, ngủ ngon nhé ;)",
@@ -65,16 +67,14 @@ module.exports ={
 "100004084606664",
 "100004093957947",
 "100004641033025",
+"100004759801726",
 "100005124067761",
 "100005249413387",
 "100005299982979",
-"100005712708600",
-"100005851783704",
 "100005915289249",
 "100005962411708",
 "100005987747643",
 "100007437002440",
-"100007544979845",
 "100007574402195",
 "100007726201254",
 "100007898178740",
@@ -84,8 +84,6 @@ module.exports ={
 "100008703528249",
 "100008809720872",
 "100008962062885",
-"100008973167586",
-"100009053391532",
 "100010856615735",
 "100009854851642",
 "100011056934021",
@@ -105,26 +103,32 @@ module.exports ={
 "100025172011791",
 "100025771506638",
 "100026766220389",
-"100027620956013",
 "100027875588410",
 "100028233190695",
 "100028322028910",
 "100029636344131",
 "100030398709156",
-"100030649745108",
 "100033114706234",
 "100034625802080",
 
     ],
-    getMessage: function(){
+    getMessage: async function(){
         var offset = '+7'
         var d = new Date();
     var utc = d.getTime() + (d.getTimezoneOffset() * 60000);
 
     // create new Date object for different city
     // using supplied offset
+    var weather ;
+    await getWeather(function(content){
+weather=content;
+
+    });
     var nd = new Date(utc + (3600000*offset));
     var time = nd.getHours()+ ':'+ nd.getMinutes()+':'+nd.getSeconds();
-        return message[Math.floor(Math.random() * message.length)].replace('{time}',time);
-    }
+    var mess = message[Math.floor(Math.random() * message.length)].replace('{time}',time)+' \r\n '+weather;
+    console.log(mess);
+        return mess ;
+    },
+
 }
