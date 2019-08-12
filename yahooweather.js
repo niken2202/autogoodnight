@@ -37,7 +37,7 @@ async function weather(location,next){
 module.exports = {
 getWeather : async function (next) {
 
-    var locations = ['hanoi,vn','hochiminh,vn','danang,vn'];
+    var locations = ['hanoi,vn','hochiminh,vn','hue,vn','danang,vn'];
     var content = '----🌦Ngày mai🌦----\r\n';
     for(var i =0;i<locations.length;i++){
         await weather(locations[i],  function(data){

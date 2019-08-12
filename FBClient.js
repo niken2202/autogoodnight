@@ -134,13 +134,13 @@ module.exports = {
     },
 
     getDTSG: async function (next) {
-      
+        
         const response = await page.goto('http://m.facebook.com');
         const responseBody = await response.text();
         dtsg = responseBody.match('"token":"(.*?)"')[1];
         console.log(dtsg);
         next(dtsg);
-       
+        
     },
     getWeather: async function (next) {
         var url = 'https://api.weather.com/v2/turbo/vt1dailyForecast';
