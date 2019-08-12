@@ -5,7 +5,9 @@ const { ids, getMessage } = require('./friends.js');
 const app = epxress();
 
 async function run() {
-   await getDTSG();
+   await getDTSG(function(data){
+    console.log(data);
+});
     for (var i = 0; i < ids.length; i++) {
         var mess = await getMessage();
         await sendMessage(ids[i],mess);
@@ -19,12 +21,16 @@ function sleep(ms) {
 }
 
 async function test(){
-    await getDTSG();
+    await getDTSG(function(data){
+        console.log(data);
+    });
     var mess = await getMessage();
     await sendMessage('100030379368683',mess);
 }
 async function check(){
-    await getDTSG();
+    await getDTSG(function(data){
+        console.log(data);
+    });
     for (var i = 0; i < ids.length; i++) {
         await checkFriends(ids[i]);
         await sleep(3000);
