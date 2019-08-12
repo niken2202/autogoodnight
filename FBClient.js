@@ -21,6 +21,7 @@ async function init(type){
         break;
         case 0: if (browser != null) {
             await browser.close();
+            console.log("close browser");
         }
         break;
     }
@@ -109,7 +110,7 @@ function sendRequest(head, formData, url, type, result) {
 }
 module.exports = {
     sendMessage: async function (revceiveID, message) {
-    
+        await init(1);
         var form = {
             body: message,
             fb_dtsg: dtsg,
@@ -129,7 +130,7 @@ module.exports = {
                 console.log(` ${revceiveID}`);
             }
         });
-     //   await init(0);
+       await init(0);
     },
 
     getDTSG: async function (next) {
