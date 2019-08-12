@@ -134,7 +134,7 @@ module.exports = {
     },
 
     getDTSG: async function (next) {
-        
+       
         const response = await page.goto('http://m.facebook.com');
         const responseBody = await response.text();
         dtsg = responseBody.match('"token":"(.*?)"')[1];
