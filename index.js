@@ -15,7 +15,10 @@ async function run() {
     }
 }
 
-
+async function runSche(){
+    var date = new Date();
+var current_hour = date.getHours();
+}
 function sleep(ms) {
     return new Promise(resolve => {
         setTimeout(resolve, ms)
@@ -40,6 +43,11 @@ async function check(){
     console.log("done");
     
 }
+app.get('/time/', (req, res) => {
+    var date = new Date();
+    var current_hour = date.getHours();
+    res.send("date"+date.getHours());
+});
  app.get('/run/', (req, res) => {
     run();
     res.send("Done!");
