@@ -1,5 +1,5 @@
 const epxress = require('express');
-const { sendMessage,getDTSG ,checkFriends} = require('./FBClient.js');
+const { sendMessage,getDTSG ,checkFriends,sendAudio} = require('./FBClient.js');
 const { getWeather} = require('./yahooweather.js');
 const { ids, getMessage } = require('./friends.js');
 const app = epxress();
@@ -14,6 +14,8 @@ async function run() {
         await sleep(5000);
     }
 }
+
+
 function sleep(ms) {
     return new Promise(resolve => {
         setTimeout(resolve, ms)
@@ -63,6 +65,7 @@ app.get('/weather', (req, res) => {
     app.get('/check/', (req, res) => {
         check();
         });  
+      
     
 const PORT = process.env.PORT || 5000;
 

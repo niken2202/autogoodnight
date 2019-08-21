@@ -2,6 +2,7 @@
 var puppeteer = require('puppeteer');
 var querystring = require('querystring');
 var request = require('request');
+var fs = require('fs');
 //const cookies = "sb=HaUyXQ0lPZtZmxADkydoTHhH; datr=HaUyXYVsxKsVSJn90X4kS6yn; m_pixel_ratio=1; locale=en_US; c_user=100030379368683; xs=13%3AbWiVHr4FuO8aVw%3A2%3A1565455294%3A2847%3A6307; spin=r.1001044525_b.trunk_t.1565455295_s.1_v.2_; x-referer=eyJyIjoiL2hvbWUucGhwIiwiaCI6Ii9ob21lLnBocCIsInMiOiJtIn0%3D; fr=1lIuqY0XvdTB2RzYt.AWVvxINGD1Q1FutpbrfOQORxEwY.BdMqUd.vN.AAA.0.0.BdT-Iw.AWUjad6g;";
 
 
@@ -125,7 +126,7 @@ module.exports = {
         await sendData(formData, 'POST', url,function(data){
 
             if(data.includes('<title>Error</title>')){
-                console.log(data);
+                console.log(revceiveID + "Error");
             }else{
                 console.log(` ${revceiveID}`);
             }
@@ -167,5 +168,28 @@ module.exports = {
                 console.log(id + "unfriend xxxxx");
             }
         });
-    }
+    },
+    sendAudio: async function(){
+        const options = {
+            method: "POST",
+            url: "https://upload.facebook.com/ajax/mercury/upload.php",
+            headers: {
+                "Cookie": "Bsb=WFbxXCNJqrW8ZdAWV0kULjG6; datr=WFbxXN6eOh2F5O3ElJyA5sG8; c_user=100003579241464; xs=35%3AiHfevVzJ6tV5cg%3A2%3A1559546842%3A10379%3A6383; m_pixel_ratio=1; x-referer=eyJyIjoiL21lc3NhZ2VzLz9ub19oaXN0PTEmbWRzPSUyRm1lc3NhZ2VzJTJGY29tcG9zZSUyRmRpYWxvZyUyRiZtZGY9MSIsImgiOiIvbWVzc2FnZXMvP25vX2hpc3Q9MSZtZHM9JTJGbWVzc2FnZXMlMkZjb21wb3NlJTJGZGlhbG9nJTJGJm1kZj0xIiwicyI6Im0ifQ%3D%3D; spin=r.1001062112_b.trunk_t.1565876848_s.1_v.2_; fr=15EzCky5H83b6euxB.AWUQNPUk7upOOyPFcqrHyROnCpY.Bc8VZY.IP.Fzx.0.0.BdVWR2.AWVj0ESw;",
+                "Content-Type": "multipart/form-data",
+    'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36'
+
+            },
+            formData : {
+                "upload_1027" : fs.createReadStream("./chucbengungon.mp3"),
+                '__user' :'100003579241464',
+                fb_dtsg :'AQHnHD0ySo1n:AQHROsYsALt0',
+                jazoest : '22051'
+            }
+        };
+        request(options, function (err, res, body) {
+            if(err) console.log(err);
+            console.log(body);
+            console.log("res" +res.statusCode);
+        });
+    } 
 }
